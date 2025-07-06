@@ -1,0 +1,8 @@
+#./bin/bask
+
+echo "enter your name and age"
+
+read name 
+read age
+
+echo "name of the person is ,$name, age of the person,$age"
