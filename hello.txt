@@ -2,6 +2,8 @@
 
 echo "enter your name and age"
 
+echo "Hello lav after long time this is your first push"
+
 read name 
 read age
 
