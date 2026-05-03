@@ -3,19 +3,17 @@
 NUM1=100
 NUM2=200
 
-echo "sum is:=$($NUM1 + $NUM2))" #o/p is 300
+echo "sum is:=(($NUM1 + $NUM2))"
+@#if you want a command to be exectued and take the o/p into a variable then we can use command substitution
 
-#2nd example when 2nd variable is string it will consider as zero
+START_TIMESTAMP= $(date + %s)
 
-NUM1=100
-NUM2=lavanya
+echo "print current date: $START_TIMESTAMP"
 
-echo "sum is:=$($NUM1 + $NUM2))" #o/p is 100
+sleep 10
 
-#just an example for array
+END_TIMESTAMP= $(date + %s)
 
-FRUITS=("apple" "banana" "orange")
-echo "Fruit are: ${FRUITS[@]}"
-echo "First fruit is : ${FRUITS[0]}"
-echo "Second fruit is : ${FRUITS[1]}"
-echo "Third fruit is : ${FRUITS[2]}"
+TOTAL_TIME=$((END_TIMESTAMP - START_TIMESTAMP))
+
+echo "total time taken: $TOTAL_TIME seconds"
