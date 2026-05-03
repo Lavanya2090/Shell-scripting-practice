@@ -16,3 +16,23 @@ if [ $? -nq 0 ]; then
 else
     echo "sucess to install nginx"
 fi
+
+echo "install mysql"
+dnf install mysql -y
+
+if [$? -nq 0]; then
+    echo"mysql installed failure"
+    exit 1
+else
+    echo "sucess to install mysql"
+fi    
+
+echo "install nodejs"
+dnf install nodejs -y
+
+if [$? -nq 0]; then
+    echo"nodejs installed failure"
+    exit 1
+else
+    echo "sucess to install nodejs"
+fi  
