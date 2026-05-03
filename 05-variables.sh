@@ -1,15 +1,21 @@
 #!/bin/bash 
 
-@#if you want a command to be exectued and take the o/p into a variable then we can use command substitution
+NUM1=100
+NUM2=200
 
-START_TIMESTAMP= $(date + %s)
+echo "sum is:=$($NUM1 + $NUM2))" #o/p is 300
 
-echo "print current date: $START_TIMESTAMP"
+#2nd example when 2nd variable is string it will consider as zero
 
-sleep 10
+NUM1=100
+NUM2=lavanya
 
-END_TIMESTAMP= $(date + %s)
+echo "sum is:=$($NUM1 + $NUM2))" #o/p is 100
 
-TOTAL_TIME=$((END_TIMESTAMP - START_TIMESTAMP))
+#just an example for array
 
-echo "total time taken: $TOTAL_TIME seconds"
+FRUITS=("apple" "banana" "orange")
+echo "Fruit are: ${FRUITS[@]}"
+echo "First fruit is : ${FRUITS[0]}"
+echo "Second fruit is : ${FRUITS[1]}"
+echo "Third fruit is : ${FRUITS[2]}"
