@@ -22,7 +22,13 @@ VALIDATE(){
 
 for package in $@  #sudo sh 12-loops.sh nginx mysql nodejs
 do 
-    echo "installing $package"
-    dnf install $package -y &>> $lOG_FILE
-    VALIDATE $? "$package installation"
+    dnf list installed $package &>> $lOG_FILE   #to check whether the package is already installed or not
+    if [$? nq 0]; then  #if the package is not installed then it will return non zero exit code
+        echo "$package not installed,installing now"
+        echo "installing $package"
+        dnf install $package -y &>> $lOG_FILE
+        VALIDATE $? "$package installation"
+    else
+        echo "$package is already installed"    
+    fi    
 done
